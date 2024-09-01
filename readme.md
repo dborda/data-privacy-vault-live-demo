@@ -45,4 +45,14 @@ The server will start running on `http://localhost:3001`.
 
 ### Anonymize a message
 
-Send a POST request to `/anonymize` with a JSON body containing the message to anonymize:
+Send a POST request to `/anonymize` with a JSON body containing the message to anonymize. Here is an example with curl
+
+```
+curl -X POST http://localhost:3001/anonymize -H "Content-Type: application/json" -d '{"message":"oferta de trabajo para Dago Borda con email d@gmail.com y telefono 3214863218"}'
+```
+
+and the deanonymize would be
+
+```
+curl -X POST http://localhost:3001/deanonymize -H "Content-Type: application/json" -d '{"anonymizedMessage":"oferta de trabajo para NAME_b052796551d3 con email EMAIL_863f1a09e1a9 y telefono PHONE_cea88b96e4d7"}'
+```
